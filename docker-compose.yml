@@ -22,12 +22,12 @@ services:
     command: sh -c "cd frontend && yarn install && yarn start"
     environment:
       - NODE_ENV=development
-      - PORT=3001
+      - PORT=3005
     working_dir: /usr/src
     volumes:
       - ./:/usr/src/
     ports:
-      - "3001:3001"
+      - "3005:3005"
     depends_on:
       - anythink-backend
 
