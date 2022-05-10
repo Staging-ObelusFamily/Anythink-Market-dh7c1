@@ -22,19 +22,20 @@ services:
     command: sh -c "cd frontend && yarn install && yarn start"
     environment:
       - NODE_ENV=development
-      - PORT=3005
+      - PORT=3001
     working_dir: /usr/src
     volumes:
       - ./:/usr/src/
+      - /usr/src/backend/node_modules
     ports:
-      - "3005:3005"
-    depends_on:
-      - anythink-backend
+      - "3001:3001"
 
   mongodb:
     container_name: mongodb
     restart: always
     image: mongo
+    logging:
+      driver: none
     volumes:
       - ~/mongo/data:/data/db
     ports:
