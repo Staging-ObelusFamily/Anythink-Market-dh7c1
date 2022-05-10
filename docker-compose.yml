@@ -11,7 +11,7 @@ services:
     working_dir: /usr/src
     volumes:
       - ./:/usr/src/
-      - - /usr/src/backend/node_modules
+      - /usr/src/backend/node_modules
     ports:
       - "3000:3000"
     depends_on:
